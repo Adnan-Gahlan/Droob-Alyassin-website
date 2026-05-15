@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>حجز الخدمات - مكتب دروب الياسين للسفريات والسياحة</title>
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+rel="stylesheet"
+/>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+/>
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="responsive.css" />
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+<div class="container">
+<a class="navbar-brand" href="index.html">
+<i class="fas fa-route me-2"></i> دروب الياسين
+</a>
+<button
+class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#mainNavbar"
+>
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="mainNavbar">
+<ul class="navbar-nav ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="index.html">الرئيسية</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="about.html">من نحن</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="services.html">خدماتنا</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="hajj-umrah.html">الحج والعمرة</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="booking.html">الحجز</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="contact.html">اتصل بنا</a>
+  </li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="page-hero booking-hero">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-8 mx-auto text-center">
+  <h1 class="display-4 fw-bold mb-4">حجز خدمات مكتب دروب الياسين</h1>
+  <p class="lead mb-4">
+    اختر الخدمة المطلوبة واملأ النموذج للحصول على الخدمة بسرعة ودقة
+  </p>
+</div>
+</div>
+</div>
+</section>
+<section class="booking-form-section py-5">
+<div class="container">
+<div class="booking-form-container">
+<!-- تقدم النموذج -->
+<div class="form-progress mb-5">
+  <div class="progress">
+    <div
+      class="progress-bar"
+      role="progressbar"
+      style="width: 33%"
+      aria-valuenow="33"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    ></div>
+  </div>
+  <div class="progress-steps">
+    <div class="step active">
+      <span class="step-number">1</span>
+      <span class="step-label">اختر الخدمة</span>
+    </div>
+    <div class="step">
+      <span class="step-number">2</span>
+      <span class="step-label">املأ البيانات</span>
+    </div>
+    <div class="step">
+      <span class="step-number">3</span>
+      <span class="step-label">تأكيد الحجز</span>
+    </div>
+  </div>
+</div>
+<form id="bookingForm" class="booking-form">
+
+  <div class="form-step active" id="step1">
+    <h3 class="mb-4">
+      <i class="fas fa-list-alt me-2"></i> الخطوة 1: اختر الخدمة
+      المطلوبة
+    </h3>
+
+    <div class="services-options">
+
+      <div class="service-option" data-service="passport">
+        <div class="service-check">
+          <input
+            type="radio"
+            name="service"
+            id="passport"
+            value="passport"
+          />
+          <label for="passport"></label>
+        </div>
+        <div class="service-info">
+          <h5><i class="fas fa-passport me-2"></i> قطع جواز</h5>
+          <p>استخراج وتجديد الجوازات بكل سرية وأمان</p>
+        </div>
+      </div>
+      <div class="service-option" data-service="hajj">
+        <div class="service-check">
+          <input type="radio" name="service" id="hajj" value="hajj" />
+          <label for="hajj"></label>
+        </div>
+        <div class="service-info">
+          <h5><i class="fas fa-kaaba me-2"></i> حج</h5>
+          <p>برامج حج متكاملة مع أفضل الخدمات والإرشاد</p>
+        </div>
+      </div>
+      <div class="service-option" data-service="transaction">
+        <div class="service-check">
+          <input
+            type="radio"
+            name="service"
+            id="transaction"
+            value="transaction"
+          />
+          <label for="transaction"></label>
+        </div>
+        <div class="service-info">
+          <h5>
+            <i class="fas fa-file-contract me-2"></i> تخليص معاملة
+          </h5>
+          <p>تخليص جميع المعاملات الحكومية والرسمية</p>
+        </div>
+      </div>
+      <div class="service-option" data-service="family_visit">
+        <div class="service-check">
+          <input
+            type="radio"
+            name="service"
+            id="family_visit"
+            value="family_visit"
+          />
+          <label for="family_visit"></label>
+        </div>
+        <div class="service-info">
+          <h5>
+            <i class="fas fa-users me-2"></i> تخليص زيارة عائلية
+          </h5>
+          <p>تخليص معاملات زيارة العائلة والمقربين</p>
+        </div>
+      </div>
+      <div class="service-option" data-service="security_approval">
+        <div class="service-check">
+          <input
+            type="radio"
+            name="service"
+            id="security_approval"
+            value="security_approval"
+          />
+          <label for="security_approval"></label>
+        </div>
+        <div class="service-info">
+          <h5>
+            <i class="fas fa-shield-alt me-2"></i> موافقات أمنية
+          </h5>
+          <p>موافقات أمنية لمصر والأردن بسرعة فائقة</p>
+        </div>
+      </div>
+      <div class="service-option" data-service="tickets">
+        <div class="service-check">
+          <input
+            type="radio"
+            name="service"
+            id="tickets"
+            value="tickets"
+          />
+          <label for="tickets"></label>
+        </div>
+        <div class="service-info">
+          <h5><i class="fas fa-plane me-2"></i> حجز تذاكر سفر</h5>
+          <p>حجز تذاكر طيران بأسعار تنافسية لجميع الوجهات</p>
+        </div>
+      </div>
+      <div class="service-option" data-service="work_visa">
+        <div class="service-check">
+          <input
+            type="radio"
+            name="service"
+            id="work_visa"
+            value="work_visa"
+          />
+          <label for="work_visa"></label>
+        </div>
+        <div class="service-info">
+          <h5><i class="fas fa-briefcase me-2"></i> فيزة عمل</h5>
+          <p>استخراج فيز عمل بجميع أنواعها</p>
+        </div>
+      </div>
+    </div>
+    <div
+      id="serviceDetails"
+      class="service-details mt-4"
+      style="display: none" >
+  
+      <div
+        class="security-details"
+        id="securityDetails"
+        style="display: none"
+      >
+        <h5 class="mb-3">
+          <i class="fas fa-globe-asia me-2"></i> اختر البلد للموافقات
+          الأمنية
+        </h5>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="country"
+                id="egypt"
+                value="egypt"
+              />
+              <label class="form-check-label" for="egypt">
+                <i class="fas fa-flag me-2"></i> مصر
+              </label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="country"
+                id="jordan"
+                value="jordan"
+              />
+              <label class="form-check-label" for="jordan">
+                <i class="fas fa-flag me-2"></i> الأردن
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="visa-details"
+        id="visaDetails"
+        style="display: none"
+      >
+        <h5 class="mb-3">
+          <i class="fas fa-passport me-2"></i> اختر نوع الفيزة
+        </h5>
+        <select class="form-select" id="visaType">
+          <option value="">-- اختر نوع الفيزة --</option>
+          <option value="private_driver">سائق خاص</option>
+          <option value="domestic_worker">عامل منزلي</option>
+          <option value="individual_establishment">
+            مؤسسة فردية
+          </option>
+          <option value="loader">عامل تحميل وتنزيل</option>
+          <option value="other">أخرى</option>
+        </select>
+        <div
+          class="other-visa-field mt-3"
+          id="otherVisaField"
+          style="display: none"
+        >
+          <label class="form-label">يرجى كتابة نوع الفيزة:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="otherVisaInput"
+            placeholder="اكتب نوع الفيزة المطلوبة..."
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-navigation mt-4">
+      <button
+        type="button"
+        class="btn btn-primary btn-next"
+        data-next="step2"
+      >
+        <i class="fas fa-arrow-left me-2"></i> التالي: بيانات العميل
+      </button>
+    </div>
+  </div>
+
+  <!-- الخطوة 2: بيانات العميل -->
+  <div class="form-step" id="step2" style="display: none">
+    <h3 class="mb-4">
+      <i class="fas fa-user-circle me-2"></i> الخطوة 2: بيانات العميل
+    </h3>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="fullName" class="form-label"
+          >الاسم الكامل *</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="fullName"
+          required
+        />
+        <div class="invalid-feedback">يرجى إدخال الاسم الكامل</div>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="phone" class="form-label">رقم الهاتف *</label>
+        <input type="tel" class="form-control" id="phone" required />
+        <div class="invalid-feedback">يرجى إدخال رقم هاتف صحيح</div>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="email" class="form-label"
+          >البريد الإلكتروني</label
+        >
+        <input type="email" class="form-control" id="email" />
+        <div class="invalid-feedback">
+          يرجى إدخال بريد إلكتروني صحيح
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="bookingDate" class="form-label"
+          >تاريخ الحجز المطلوب</label
+        >
+        <input type="date" class="form-control" id="bookingDate" />
+      </div>
+
+      <div class="col-12 mb-3">
+        <label for="additionalInfo" class="form-label"
+          >تفاصيل إضافية (اختياري)</label
+        >
+        <textarea
+          class="form-control"
+          id="additionalInfo"
+          rows="3"
+          placeholder="اكتب أي تفاصيل إضافية هنا..."
+        ></textarea>
+      </div>
+    </div>
+
+    <div class="form-navigation mt-4">
+      <button
+        type="button"
+        class="btn btn-outline-secondary btn-prev"
+        data-prev="step1"
+      >
+        <i class="fas fa-arrow-right me-2"></i> السابق: اختيار الخدمة
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary btn-next"
+        data-next="step3"
+      >
+        <i class="fas fa-arrow-left me-2"></i> التالي: تأكيد الحجز
+      </button>
+    </div>
+  </div>
+
+  <!-- الخطوة 3: تأكيد الحجز -->
+  <div class="form-step" id="step3" style="display: none">
+    <h3 class="mb-4">
+      <i class="fas fa-check-circle me-2"></i> الخطوة 3: تأكيد الحجز
+    </h3>
+
+    <div class="booking-summary">
+      <div class="summary-header">
+        <h4>ملخص طلب الحجز</h4>
+        <p>يرجى مراجعة المعلومات قبل الإرسال</p>
+      </div>
+
+      <div class="summary-content">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>الخدمة المختارة:</h5>
+            <p id="summaryService" class="text-gold">
+              لم يتم اختيار خدمة
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h5>تفاصيل إضافية:</h5>
+            <p id="summaryDetails">لا توجد تفاصيل إضافية</p>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <h5>معلومات العميل:</h5>
+            <p id="summaryCustomer">لم يتم إدخال المعلومات</p>
+          </div>
+          <div class="col-md-6">
+            <h5>التواصل:</h5>
+            <p id="summaryContact">لم يتم إدخال معلومات التواصل</p>
+          </div>
+        </div>
+
+        <div class="booking-notice mt-4">
+          <div class="alert alert-info">
+            <i class="fas fa-info-circle me-2"></i>
+            <strong>ملاحظة:</strong> بعد إرسال طلب الحجز، سيتصل بك أحد
+            ممثلينا خلال 24 ساعة لتأكيد التفاصيل والمستندات المطلوبة.
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-navigation mt-4">
+      <button
+        type="button"
+        class="btn btn-outline-secondary btn-prev"
+        data-prev="step2"
+      >
+        <i class="fas fa-arrow-right me-2"></i> السابق: بيانات العميل
+      </button>
+      <button type="submit" class="btn btn-success">
+        <i class="fas fa-paper-plane me-2"></i> إرسال طلب الحجز
+      </button>
+    </div>
+  </div>
+</form>
+
+
+<div class="quick-contact mt-5 pt-4 border-top">
+  <h5 class="mb-3">
+    <i class="fas fa-headset me-2"></i> للتواصل المباشر:
+  </h5>
+  <div class="contact-numbers">
+    <a href="tel:771084900" class="phone-link">
+      <i class="fas fa-phone-alt me-2"></i> 771084900
+    </a>
+    <span class="separator">|</span>
+    <a href="tel:779004023" class="phone-link">
+      <i class="fas fa-phone-alt me-2"></i> 779004023
+    </a>
+  </div>
+  <p class="mt-3 slogan">✈️ دروب الياسين… رحلتك تبدأ معنا بثقة</p>
+</div>
+</div>
+</div>
+</section>
+<section class="faq-section py-5 bg-light">
+<div class="container">
+<div class="text-center mb-5">
+<h2 class="section-title">أسئلة شائعة حول الحجز</h2>
+<p class="section-subtitle">
+  إجابات على أكثر الأسئلة تكراراً من عملائنا
+</p>
+</div>
+
+<div class="accordion" id="bookingFAQ">
+
+<div class="accordion-item">
+  <h3 class="accordion-header">
+    <button
+      class="accordion-button"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#faq1">
+      كم تستغرق مدة إنجاز الخدمة؟
+    </button>
+  </h3>
+  <div
+    id="faq1"
+    class="accordion-collapse collapse show"
+    data-bs-parent="#bookingFAQ"
+  >
+    <div class="accordion-body">
+      تختلف المدة حسب نوع الخدمة. خدمات قطع الجوازات قد تستغرق من 3-7
+      أيام عمل، بينما الموافقات الأمنية قد تستغرق من 5-14 يوم عمل.
+      سنزودك بجدول زمني دقيق بعد استلام طلبك.
+    </div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <h3 class="accordion-header">
+    <button
+      class="accordion-button collapsed"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#faq2"
+    >
+      ما هي المستندات المطلوبة للحجز؟
+    </button>
+  </h3>
+  <div
+    id="faq2"
+    class="accordion-collapse collapse"
+    data-bs-parent="#bookingFAQ"
+  >
+    <div class="accordion-body">
+      تختلف المستندات حسب الخدمة المطلوبة. بشكل عام، نحتاج إلى صورة من
+      الهوية/الجواز، وصور شخصية حديثة. سنزودك بقائمة كاملة بالمستندات
+      المطلوبة بعد اختيار الخدمة.
+    </div>
+  </div>
+</div>
+
+
+<div class="accordion-item">
+  <h3 class="accordion-header">
+    <button
+      class="accordion-button collapsed"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#faq3"
+    >
+      هل يمكنني تعديل أو إلغاء الحجز؟
+    </button>
+  </h3>
+  <div
+    id="faq3"
+    class="accordion-collapse collapse"
+    data-bs-parent="#bookingFAQ"
+  >
+    <div class="accordion-body">
+      نعم، يمكنك تعديل الحجز قبل بدء المعاملة. للإلغاء، يرجى التواصل
+      معنا خلال 24 ساعة من الحجز. قد تنطبق رسوم إدارية في حال بدء
+      المعاملة.
+    </div>
+  </div>
+</div>
+
+
+<div class="accordion-item">
+  <h3 class="accordion-header">
+    <button
+      class="accordion-button collapsed"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#faq4"
+    >
+      ما هي طرق الدفع المتاحة؟
+    </button>
+  </h3>
+  <div
+    id="faq4"
+    class="accordion-collapse collapse"
+    data-bs-parent="#bookingFAQ"
+  >
+    <div class="accordion-body">
+      نقبل الدفع النقدي في المكتب، التحويل البنكي، أو عبر البطاقات
+      الائتمانية (حسب توفر الجهاز). يتم تحديد طريقة الدفع المناسبة عند
+      تأكيد الخدمة.
+    </div>
+  </div>
+</div>
+
+
+<div class="accordion-item">
+  <h3 class="accordion-header">
+    <button
+      class="accordion-button collapsed"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#faq5"
+    >
+      كيف يمكنني متابعة حالة طلبي؟
+    </button>
+  </h3>
+  <div
+    id="faq5"
+    class="accordion-collapse collapse"
+    data-bs-parent="#bookingFAQ"
+  >
+    <div class="accordion-body">
+      بعد إرسال طلب الحجز، سنزودك برقم متابعة خاص. يمكنك استخدام هذا
+      الرقم للاستفسار عن حالة طلبك عبر الهاتف أو زيارة المكتب.
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+<footer class="footer">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 mb-4">
+  <div class="footer-brand">
+    <i class="fas fa-route me-2"></i> دروب الياسين
+  </div>
+  <p class="mt-3">
+    مكتب دروب الياسين للسفريات والسياحة وخدمات الحج والعمرة
+  </p>
+  <p class="slogan">نضمن لكم سرعة الخدمة – الدقة – وثقة التعامل</p>
+</div>
+
+<div class="col-lg-4 mb-4">
+  <h5 class="footer-title">روابط سريعة</h5>
+  <ul class="footer-links">
+    <li>
+      <a href="index.html"
+        ><i class="fas fa-chevron-left me-2"></i> الرئيسية</a
+      >
+    </li>
+    <li>
+      <a href="about.html"
+        ><i class="fas fa-chevron-left me-2"></i> من نحن</a
+      >
+    </li>
+    <li>
+      <a href="services.html"
+        ><i class="fas fa-chevron-left me-2"></i> خدماتنا</a
+      >
+    </li>
+    <li>
+      <a href="hajj-umrah.html"
+        ><i class="fas fa-chevron-left me-2"></i> الحج والعمرة</a
+      >
+    </li>
+    <li>
+      <a href="booking.html"
+        ><i class="fas fa-chevron-left me-2"></i> الحجز</a
+      >
+    </li>
+    <li>
+      <a href="contact.html"
+        ><i class="fas fa-chevron-left me-2"></i> اتصل بنا</a
+      >
+    </li>
+  </ul>
+</div>
+
+<div class="col-lg-4 mb-4">
+  <h5 class="footer-title">معلومات التواصل</h5>
+  <div class="contact-info">
+    <p><i class="fas fa-phone me-2"></i> 771084900</p>
+    <p><i class="fas fa-phone me-2"></i> 779004023</p>
+    <p>
+      <i class="fas fa-clock me-2"></i> الأحد - الخميس: 8 صباحاً - 10
+      مساءً
+    </p>
+    <p>
+      <i class="fas fa-clock me-2"></i> الجمعة - السبت: 4 مساءً - 10
+      مساءً
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="copyright text-center mt-5 pt-4 border-top">
+<p class="mb-0">
+  جميع الحقوق محفوظة &copy; 2026 مكتب دروب الياسين للسفريات والسياحة
+</p>
+</div>
+</div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="main.js"></script>
+<script src="booking.js"></script>
+<script>
+$(document).ready(function () {
+console.log("تم تحميل صفحة الحجز");
+initializeBookingPage();
+setTimeout(function () {
+showToast("مرحباً بك في صفحة حجز خدمات مكتب دروب الياسين", "info");
+}, 1000);
+});
+</script>
+</body>
+</html>
